@@ -28,11 +28,11 @@ class Settings(pydantic_settings.BaseSettings):
     cors_allowed_methods: list[str] = [""]
     cors_allowed_headers: list[str] = [""]
     cors_exposed_headers: list[str] = []
-
 {%- if framework == "litestar" %}
 
     request_max_body_size: int = 1024 * 1024  # 1MB limit
 {% endif %}
+
     @property
     def db_dsn_parsed(self) -> URL:
         return make_url(self.db_dsn)

@@ -5,8 +5,7 @@ description = "{{project_description}}"
 readme = "README.md"
 requires-python = ">=3.13"
 authors = [
-    { email = "me@shiriev.ru" },
-    { name = "Artur Shiriev"}
+    { name = "Artur Shiriev", email = "me@shiriev.ru" },
 ]
 license = "MIT License"
 dependencies = [
@@ -19,7 +18,7 @@ dependencies = [
     "fastapi>=0.76",
     "lite-bootstrap[fastapi-all]",
     "modern-di-fastapi",
-{% endif %}
+{%- endif %}
     "advanced-alchemy",
     "pydantic-settings",
     "granian[uvloop]",

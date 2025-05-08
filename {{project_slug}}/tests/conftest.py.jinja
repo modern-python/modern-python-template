@@ -30,8 +30,8 @@ async def app() -> typing.AsyncIterator[litestar.Litestar]:
 @pytest.fixture
 async def client(app: litestar.Litestar) -> typing.AsyncIterator[AsyncClient]:
     async with AsyncClient(
-            transport=ASGITransport(app=app),  # type: ignore[arg-type]
-            base_url="http://test",
+        transport=ASGITransport(app=app),  # type: ignore[arg-type]
+        base_url="http://test",
     ) as client:
         yield client
 
@@ -39,7 +39,7 @@ async def client(app: litestar.Litestar) -> typing.AsyncIterator[AsyncClient]:
 @pytest.fixture
 def di_container(app: litestar.Litestar) -> modern_di.Container:
     return modern_di_litestar.fetch_di_container(app)
-{% endif -%}
+{%- endif %}
 {% if framework == "fastapi" -%}
 @pytest.fixture
 async def app() -> typing.AsyncIterator[fastapi.FastAPI]:
@@ -60,8 +60,7 @@ async def client(app: fastapi.FastAPI) -> typing.AsyncIterator[AsyncClient]:
 @pytest.fixture
 def di_container(app: fastapi.FastAPI) -> modern_di.Container:
     return modern_di_fastapi.fetch_di_container(app)
-
-{% endif -%}
+{%- endif %}
 
 
 @pytest.fixture(autouse=True)
