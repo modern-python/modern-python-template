@@ -1,0 +1,11 @@
+project_name: New Service
+project_slug:
+  type: str
+  default: "{{ project_name|lower|replace(' ', '-') }}"
+project_description: ""
+framework:
+  type: str
+  choices:
+    - fastapi
+    - litestar
+  default: litestar
