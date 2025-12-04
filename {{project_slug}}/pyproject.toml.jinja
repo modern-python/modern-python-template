@@ -12,12 +12,12 @@ dependencies = [
 {%- if framework == "litestar" %}
     "litestar",
     "lite-bootstrap[litestar-all]",
-    "modern-di-litestar",
+    "modern-di-litestar>=1",
 {%- endif -%}
 {%- if framework == "fastapi" %}
     "fastapi>=0.76",
     "lite-bootstrap[fastapi-all]",
-    "modern-di-fastapi",
+    "modern-di-fastapi>=1",
 {%- endif %}
     "advanced-alchemy",
     "pydantic-settings",
